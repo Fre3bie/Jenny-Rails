@@ -20,9 +20,15 @@ public class CameraController : Node2D
 
     public override void _Input(InputEvent inputEvent)
     {
-        if (inputEvent is InputEventKey && inputEvent.IsPressed())
+        if (inputEvent.IsActionPressed("move_left") | inputEvent.IsActionPressed("move_right") |
+            inputEvent.IsActionPressed("move_up") | inputEvent.IsActionPressed("move_down"))
         {
             CameraMoving = true;
+        }
+        else if (Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left") == 0 &&
+                 Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up") == 0)
+        {
+            CameraMoving = false;
         }
     }
 

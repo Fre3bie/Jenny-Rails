@@ -46,6 +46,10 @@ move_down={
 file_logging/enable_file_logging=true
 file_logging/max_log_files=3
 
+[mono]
+
+debugger_agent/wait_for_debugger=true
+
 [physics]
 
 common/enable_pause_aware_picking=true
